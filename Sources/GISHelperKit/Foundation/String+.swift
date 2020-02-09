@@ -21,4 +21,11 @@ extension String {
         return result
     }
 	public var emptyNil: Self? {self.isEmpty ? nil : self }
+	
+	public func tabDescription(max:Int) -> String {
+		let MaxtabCount = (max / 4) + 1
+		let myTabCount = MaxtabCount - (count / 4)
+		let array = [self] + (0..<myTabCount).map{_ in "\t"}
+		return array.joined()
+	}
 }
